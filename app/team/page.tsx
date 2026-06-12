@@ -12,19 +12,12 @@ export const metadata: Metadata = {
     "No org chart, no suits. A handful of members who got handed the keys — and a server full of people who run the place. Every face answers to the vote.",
 };
 
-type Member = { role: string; image: string | null };
+type Member = { role: string; alias: string; image: string };
 
-/**
- * Roles only — no names on the posters (final intent).
- * `image` stays null until real b&w portraits land in /public/team.
- */
+/** Full poster cards — role label, alias, and portrait are baked into each image. */
 const TEAM: Member[] = [
-  { role: "Founder || First Poster", image: null },
-  { role: "Creative Director", image: null },
-  { role: "Drop Captain", image: null },
-  { role: "Head Mod", image: null },
-  { role: "Production Lead", image: null },
-  { role: "Ledger Keeper || Open Books", image: null },
+  { role: "Founder || Architect", alias: "The Don", image: "/team/founder-the-don.jpg" },
+  { role: "Engineer || CTO", alias: "Prompt", image: "/team/cto-prompt.jpg" },
 ];
 
 export default function TeamPage() {
@@ -46,22 +39,16 @@ export default function TeamPage() {
           </div>
 
           <div className="team-grid">
-            {TEAM.map((m, i) => (
-              <article className="team-card" key={i}>
-                {m.image ? (
-                  <Image
-                    className="team-card__img"
-                    src={m.image}
-                    alt={m.role}
-                    fill
-                    sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                  />
-                ) : (
-                  <div className="team-card__placeholder" aria-hidden="true">
-                    <span className="team-card__note">[ b&amp;w portrait ]</span>
-                  </div>
-                )}
-                <span className="team-card__role">{m.role}</span>
+            {TEAM.map((m) => (
+              <article className="team-card" key={m.role}>
+                <Image
+                  className="team-card__img"
+                  src={m.image}
+                  alt={`${m.role} — ${m.alias}`}
+                  width={1024}
+                  height={1008}
+                  sizes="(max-width: 700px) 100vw, 50vw"
+                />
               </article>
             ))}
           </div>
