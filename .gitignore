@@ -1,0 +1,11 @@
+/node_modules
+/.next
+/out
+/build
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.env*.local
+
+# Scraped source library (164MB) — only the covers used by the site live in public/reads
+/streeteconomics_hero_images
