@@ -1,7 +1,7 @@
 import {
   DISCORD_INVITE,
   DISCORD_INVITE_DISPLAY,
-  CONTACT_EMAIL,
+  INSTAGRAM_URL,
 } from "@/lib/site";
 
 /** Global footer — applied to every page. */
@@ -24,17 +24,16 @@ export default function Footer() {
               <div className="footer-group">
                 <div className="footer-head">Links /</div>
                 <div className="footer-links">
-                  <a className="footer-link" href="#">
+                  <a
+                    className="footer-link"
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="footer-link__icon" aria-hidden="true">
                       &rarr;
                     </span>
                     Instagram
-                  </a>
-                  <a className="footer-link" href="#">
-                    <span className="footer-link__icon" aria-hidden="true">
-                      &rarr;
-                    </span>
-                    TikTok
                   </a>
                   <a
                     className="footer-link"
@@ -71,7 +70,7 @@ export default function Footer() {
               <div className="footer-group footer-group--meta">
                 <div className="footer-head">Address /</div>
                 <p className="footer-text footer-text--address">
-                  N.Y.C. — Everywhere.
+                  GLOBAL
                   <br />
                   The server is the office.
                 </p>
@@ -79,8 +78,6 @@ export default function Footer() {
               <div className="footer-group footer-group--meta">
                 <div className="footer-head">Contact /</div>
                 <p className="footer-text footer-text--contact">
-                  {CONTACT_EMAIL}
-                  <br />
                   {DISCORD_INVITE_DISPLAY}
                 </p>
               </div>

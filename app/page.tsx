@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="hero-strip micro">
           <span>FOR COMMUNITY PURPOSES ONLY&trade;</span>
-          <span>N.Y.C. — EVERYWHERE</span>
+          <span>GLOBAL</span>
         </div>
       </main>
 
