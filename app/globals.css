@@ -1109,6 +1109,14 @@ img { display: block; }
   letter-spacing: 0;
 }
 
+.footer-built {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 160ms ease;
+}
+.footer-built:hover { opacity: 0.65; }
+
 .footer-legal {
   border-top: 1px solid rgba(244, 242, 236, 0.55);
   margin-top: 8px;

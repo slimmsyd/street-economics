@@ -92,6 +92,17 @@ export default function Footer() {
           <div className="footer-legal">
             <span>© 2026 STREET ECONOMICS — ALL RIGHTS COMMUNITY-RESERVED</span>
             <span>FOR COMMUNITY PURPOSES ONLY&trade;</span>
+            <span>
+              BUILT BY{" "}
+              <a
+                className="footer-built"
+                href="https://www.0ncode.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ONCODE
+              </a>
+            </span>
             <span>c. 2026</span>
           </div>
         </div>
