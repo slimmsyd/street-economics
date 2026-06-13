@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DISCORD_INVITE } from "@/lib/site";
 import MobileNav from "./MobileNav";
 
-type Active = "reads" | "access" | "community" | "team" | null;
+type Active = "reads" | "access" | "community" | "team" | "questionnaire" | null;
 
 /**
  * Cream masthead: wordmark + pill nav. Shared across pages.
@@ -37,6 +37,13 @@ export default function Masthead({
           aria-current={active === "team" ? "page" : undefined}
         >
           TEAM
+        </Link>
+        <Link
+          className={`pill ${active === "questionnaire" ? "pill--outline" : "pill--solid"}`}
+          href="/questionnaire"
+          aria-current={active === "questionnaire" ? "page" : undefined}
+        >
+          QUESTIONNAIRE
         </Link>
         <a
           className="pill pill--ghost"

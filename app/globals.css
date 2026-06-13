@@ -317,6 +317,27 @@ img { display: block; }
 .hero-caption--start { align-self: flex-start; }
 .hero-caption--end { align-self: flex-end; }
 
+/* Hero CTA → /questionnaire. Solid blue, inverts on hover (START-button motif). */
+.hero-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 15px 26px;
+  text-decoration: none;
+  transition: background 120ms ease, color 120ms ease;
+}
+.hero-cta:hover { background: transparent; color: var(--ink); }
+.hero-cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
 .dice-card {
   position: relative;
   display: block;
