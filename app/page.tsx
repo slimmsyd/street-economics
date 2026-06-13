@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import DropsCarousel from "@/components/DropsCarousel";
 import HeroDice from "@/components/HeroDice";
 import Masthead from "@/components/Masthead";
@@ -31,6 +32,9 @@ export default function Home() {
             <p className="hero-caption">
               A brand built in public, made with the people inside it.
             </p>
+            <Link className="hero-cta" href="/questionnaire">
+              TAKE THE QUESTIONNAIRE <span aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
 
           <div className="hero-col hero-col--center">

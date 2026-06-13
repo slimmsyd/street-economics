@@ -8,13 +8,14 @@ import {
   INSTAGRAM_URL,
 } from "@/lib/site";
 
-type Active = "reads" | "access" | "community" | "team" | null;
+type Active = "reads" | "access" | "community" | "team" | "questionnaire" | null;
 
 const NAV = [
   { key: "reads", label: "READS", href: "/#drops" },
   { key: "access", label: "ACCESS", href: "/#access" },
   { key: "community", label: "COMMUNITY", href: "/#discord" },
   { key: "team", label: "TEAM", href: "/team" },
+  { key: "questionnaire", label: "QUESTIONNAIRE", href: "/questionnaire" },
 ] as const;
 
 /** Hamburger toggle (mobile only) + full-screen menu overlay. */
