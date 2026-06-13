@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DISCORD_INVITE } from "@/lib/site";
+import MobileNav from "./MobileNav";
 
 type Active = "reads" | "access" | "community" | "team" | null;
 
@@ -46,6 +47,7 @@ export default function Masthead({
           JOIN THE DISCORD
         </a>
       </nav>
+      <MobileNav active={active} />
     </header>
   );
 }
