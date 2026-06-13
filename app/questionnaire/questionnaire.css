@@ -348,4 +348,9 @@
   max-width: 560px;
   text-wrap: pretty;
 }
-.qz-done-actions { margin-top: 46px; }
+.qz-done-actions {
+  margin-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}

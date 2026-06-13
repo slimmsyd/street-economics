@@ -95,11 +95,10 @@ export default function DropsCarousel() {
         <motion.div
           className="drop-card"
           initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <AnimatePresence mode="wait" custom={direction}>
+          <AnimatePresence mode="wait" custom={direction} initial={false}>
             <motion.div
               key={i}
               className="drop-anim"
@@ -184,8 +183,7 @@ export default function DropsCarousel() {
           rel="noopener noreferrer"
           aria-label={`Read: ${r.title}`}
           initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.08 }}
         >
           <AnimatePresence initial={false} custom={direction}>

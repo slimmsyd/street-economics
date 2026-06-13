@@ -14,6 +14,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { DISCORD_INVITE } from "@/lib/site";
 import "./questionnaire.css";
 
 type QType = "textarea" | "text" | "email" | "radio" | "multi";
@@ -502,6 +503,14 @@ export default function Questionnaire() {
             YOUR ANSWERS WILL SHAPE WHAT GETS BUILT NEXT. SEAT DETAILS FOR THE SOLUTION WEBINAR TO FOLLOW.
           </p>
           <div className="qz-done-actions">
+            <a
+              className="qz-btn qz-btn--sm"
+              href={DISCORD_INVITE}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN THE DISCORD →
+            </a>
             <button type="button" className="qz-btn qz-btn--ghost qz-btn--sm" onClick={restart}>
               SUBMIT ANOTHER →
             </button>
