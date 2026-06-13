@@ -1,3 +1,4 @@
+import Image from "next/image";
 import DropsCarousel from "@/components/DropsCarousel";
 import HeroDice from "@/components/HeroDice";
 import Masthead from "@/components/Masthead";
@@ -85,9 +86,13 @@ export default function Home() {
               ledger open. Free to enter; contribution is the currency.
             </p>
             <div className="access-art">
-              <span className="access-art__note">
-                [ mascot / campaign artwork ]
-              </span>
+              <Image
+                className="access-art__img"
+                src="/uploads/chase-the-vision.jpg"
+                alt="CHASE THE VISION — campaign artwork"
+                fill
+                sizes="(max-width: 800px) 100vw, 460px"
+              />
             </div>
           </div>
         </div>
