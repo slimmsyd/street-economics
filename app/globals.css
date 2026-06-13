@@ -599,6 +599,7 @@ img { display: block; }
   position: absolute;
   top: 20px;
   left: 20px;
+  z-index: 2;
   border: 1px solid var(--ink);
   border-radius: 999px;
   padding: 9px 18px;
@@ -606,6 +607,41 @@ img { display: block; }
   font-weight: 700;
   letter-spacing: 0.18em;
   background: var(--paper-92);
+}
+
+/* ---- Animated carousel layers (Framer Motion) ---- */
+
+/* Holds the changing tag + headline + link as one staggered group. */
+.drop-anim {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Clips the vertical "masked reveal" so text wipes in/out at the edges. */
+.drop-mask {
+  overflow: hidden;
+}
+/* The link has serif descenders (g, p) — pad so they aren't clipped at rest. */
+.drop-mask--inline {
+  width: fit-content;
+  padding-bottom: 6px;
+  margin-bottom: -6px;
+}
+
+/* Each image occupies its own absolute layer so successive slides overlap
+   and wipe across the (overflow-hidden) panel instead of reflowing. */
+.drop-panel__slide {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.drop-panel__slide .drop-panel__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ============================================================
