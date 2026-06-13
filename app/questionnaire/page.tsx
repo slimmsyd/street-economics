@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import "./questionnaire.css";
 
 type QType = "textarea" | "text" | "email" | "radio" | "multi";
@@ -435,7 +436,9 @@ export default function Questionnaire() {
       <div className="qz-veil" style={{ opacity: phase === "intro" ? 0 : 0.91 }} />
 
       <header className="qz-header">
-        <div>STREETECONOMICS®</div>
+        <Link href="/" className="qz-home">
+          <span aria-hidden="true">←</span> STREETECONOMICS®
+        </Link>
         <div>{headerRight}</div>
       </header>
 
