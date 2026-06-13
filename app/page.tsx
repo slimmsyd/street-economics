@@ -48,7 +48,7 @@ export default function Home() {
             <h2 className="display hero-headline hero-headline--right">
               COMMUNITY
               <br />
-              OWNED
+              FIRST
             </h2>
             <p className="hero-caption hero-caption--narrow hero-caption--end">
               We turn a server full of strangers into a brand.
