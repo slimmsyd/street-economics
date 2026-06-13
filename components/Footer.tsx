@@ -52,7 +52,7 @@ export default function Footer() {
               <div className="footer-group footer-group--server">
                 <div className="footer-head">Join The Server /</div>
                 <p className="footer-text">
-                  Got a concept? Post it in #design-crits. We draft from inside
+                  Got a concept? Post it in #lobby. We create from inside
                   the server.
                 </p>
                 <a
