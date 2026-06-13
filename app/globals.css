@@ -84,6 +84,26 @@ img { display: block; }
 }
 .masthead--page { padding-bottom: 56px; }
 
+/* CHASE THE VISION emblem — sits behind the wordmark as a brand backdrop. */
+.masthead__emblem {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: clamp(150px, 26vw, 300px);
+  z-index: 0;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Wordmark + nav layer above the emblem. */
+.masthead .wordmark,
+.masthead .nav,
+.masthead .nav-toggle { position: relative; z-index: 1; }
+
 .wordmark {
   display: block;
   color: var(--ink);

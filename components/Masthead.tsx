@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DISCORD_INVITE } from "@/lib/site";
 import MobileNav from "./MobileNav";
@@ -18,6 +19,17 @@ export default function Masthead({
 }) {
   return (
     <header className={`masthead${variant === "page" ? " masthead--page" : ""}`}>
+      {variant === "page" && (
+        <Image
+          className="masthead__emblem"
+          src="/uploads/se-logo.png"
+          alt=""
+          width={640}
+          height={640}
+          priority
+          aria-hidden="true"
+        />
+      )}
       <Link href="/" className="display wordmark">
         STREETECONOMICS<sup>&reg;</sup>
       </Link>
