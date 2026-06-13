@@ -8,11 +8,10 @@ import Footer from "@/components/Footer";
 import { DISCORD_INVITE, HOME_MARQUEE } from "@/lib/site";
 
 const PRIVILEGES = [
-  { n: "01", label: "VOTE ON DROPS" },
-  { n: "02", label: "EARLY ACCESS" },
-  { n: "03", label: "DESIGN CRITS" },
-  { n: "04", label: "OPEN BOOKS" },
-  { n: "05", label: "CREDITS" },
+  { n: "01", label: "INSIDER ACCESS" },
+  { n: "02", label: "BUSINESS BLUEPRINTS" },
+  { n: "03", label: "HIGH LEVEL NETWORKING" },
+  { n: "04", label: "CREATIVE BLUEPRINTS" },
 ];
 
 export default function Home() {
@@ -85,6 +84,12 @@ export default function Home() {
               brand gets made — every vote counted, every crit heard, every
               ledger open. Free to enter; contribution is the currency.
             </p>
+            <div className="access-stat">
+              <span className="display access-stat__num">230+</span>
+              <span className="micro access-stat__label">
+                Members across the globe
+              </span>
+            </div>
             <div className="access-art">
               <Image
                 className="access-art__img"
