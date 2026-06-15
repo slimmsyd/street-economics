@@ -13,7 +13,7 @@ const SITE_URL = "https://streetecon.io";
 const SITE_NAME = "Street Economics";
 const TITLE = "Street Economics — Built in Public";
 const DESCRIPTION =
-  "A community-driven streetwear brand built in public. Drops are voted on, critiqued, and named by members. Access is via the Discord.";
+  "A community-driven ecosystem for cultural economics and growth mindset, built in public. Gathering the next generation of thinkers, builders, & earners. Access via Discord.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
