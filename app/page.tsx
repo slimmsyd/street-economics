@@ -85,8 +85,8 @@ export default function Home() {
             <div className="access-aside__title">Access &amp; Privileges</div>
             <p className="access-aside__body">
               Membership is not merch-first. It is a seat at the table where the
-              brand gets made — every voice counted, every voice heard, every
-              invoice opened. Free to enter; contribution is the currency.
+              brand gets made — every vote counted, every voice heard, every
+              invoice open. Free to enter; contribution is the currency.
             </p>
             <div className="access-stat">
               <span className="display access-stat__num">230+</span>
