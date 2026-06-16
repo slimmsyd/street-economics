@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Anton } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const anton = Anton({
   weight: "400",
@@ -43,7 +44,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={anton.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Google tag (gtag.js) - GA4 */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YK8BMZR9T9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YK8BMZR9T9');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
