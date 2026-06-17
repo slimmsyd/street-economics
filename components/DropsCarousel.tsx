@@ -8,6 +8,8 @@ import {
   useReducedMotion,
   type Variants,
 } from "framer-motion";
+import type { Read } from "@/lib/reads";
+import { getStaticFallbackReads } from "@/lib/reads";
 
 /**
  * Street Economics — Substack publication base.
@@ -16,44 +18,24 @@ import {
  */
 const SUBSTACK_BASE = "https://streeteconomics.substack.com";
 
-type Read = {
-  title: string;
-  slug: string;
-  file: string;
-};
-
-/**
- * 10 most recent articles (newest first), images in /public/reads.
- * Order verified against the Street Economics Substack RSS feed:
- * the scrape manifest is ordered newest-first, so items 001–010 are the latest.
- */
-const reads: Read[] = [
-  { title: "Stop Playing Safe", slug: "stop-playing-safe", file: "001_stop-playing-safe.png" },
-  { title: "The Geometry of Becoming", slug: "the-geometry-of-becoming", file: "002_the-geometry-of-becoming.webp" },
-  { title: "The Pawn-King", slug: "the-pawn-king", file: "003_the-pawn-king.jpeg" },
-  { title: "Assets & Ammo: A Framework for Building Your Personal Economy", slug: "assets-and-ammo-a-framework-for-building", file: "004_assets-and-ammo-a-framework-for-building.png" },
-  { title: "The Art of Timing", slug: "the-art-of-timing", file: "005_the-art-of-timing.png" },
-  { title: "Keep Stacking Wins", slug: "keep-stacking-wins", file: "006_keep-stacking-wins.jpeg" },
-  { title: "The Unreasonable Man", slug: "the-unreasonable-man", file: "007_the-unreasonable-man.jpeg" },
-  { title: "Read The Realm", slug: "read-the-realm", file: "008_read-the-realm.jpeg" },
-  { title: "How To Think & Grow Rich", slug: "how-to-think-and-grow-rich", file: "009_how-to-think-and-grow-rich.jpeg" },
-  { title: "LifeMaxxing", slug: "lifemaxxing", file: "010_lifemaxxing.png" },
-];
-
 const pad = (n: number) => String(n).padStart(2, "0");
 
 // Brand-consistent easing — a confident "wipe" curve, not a bounce.
 const EASE = [0.65, 0, 0.35, 1] as const;
 
-export default function DropsCarousel() {
+export default function DropsCarousel({ reads }: { reads?: Read[] }) {
   const reduce = useReducedMotion();
+  // Always newest first. If no data passed (e.g. during static render edge case),
+  // fall back to the original 10 so the site never goes blank.
+  const items = reads && reads.length > 0 ? reads : getStaticFallbackReads();
+
   // Track the active index alongside the direction of the last move so the
   // slide/reveal animations know which way to travel (+1 = next, -1 = prev).
   const [[index, direction], setIndex] = useState<[number, number]>([0, 0]);
 
-  const total = reads.length;
+  const total = items.length;
   const i = ((index % total) + total) % total;
-  const r = reads[i];
+  const r = items[i];
   const href = `${SUBSTACK_BASE}/p/${r.slug}`;
 
   const paginate = (dir: number) => setIndex(([n]) => [n + dir, dir]);
@@ -199,7 +181,7 @@ export default function DropsCarousel() {
             >
               <Image
                 className="drop-panel__img"
-                src={`/reads/${r.file}`}
+                src={r.image}
                 alt={`${r.title} — article cover`}
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"

@@ -43,7 +43,7 @@ public/
 ## Editable constants
 
 - **Discord invite** — `lib/site.ts` (`DISCORD_INVITE`), used by every "join" CTA.
-- **READS articles** — `components/DropsCarousel.tsx` (`reads[]` + `SUBSTACK_BASE`). Order is the 10 newest from the Substack RSS feed at time of scrape.
+- **READS articles** — `components/DropsCarousel.tsx` + `lib/reads.ts`. Dynamically fetches the 10 newest posts (newest first) from the Substack archive API at build time / on revalidation. When a new post is published it automatically becomes the first item in the carousel on the next data refresh. Falls back to a static list if the API is unavailable. Uses the post's Substack cover image.
 - **Hero video** — `components/HeroDice.tsx` (`VIDEO_ID`, `START_SECONDS`).
 
 ## Pending brand assets
