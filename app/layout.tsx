@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   // og:image + twitter:image are generated from app/opengraph-image.png
   // (1200×630). metadataBase makes those URLs absolute for link scrapers.
   openGraph: {
