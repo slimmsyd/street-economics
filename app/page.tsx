@@ -16,6 +16,8 @@ const PRIVILEGES = [
   { n: "04", label: "CREATIVE BLUEPRINTS" },
 ];
 
+export const revalidate = 300;
+
 export default async function Home() {
   // Always fetches the 10 newest posts (newest first).
   // When a new article drops on Substack it will appear at position 1 on next revalidation.

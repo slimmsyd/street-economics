@@ -6,6 +6,7 @@ export type Read = {
 };
 
 const SUBSTACK_API = "https://streeteconomics.substack.com/api/v1/archive";
+const DEFAULT_READ_IMAGE = "/uploads/se-logo.png";
 
 /**
  * Fetches the latest N posts from the Substack publication.
@@ -15,9 +16,11 @@ export async function getLatestReads(limit = 10): Promise<Read[]> {
   try {
     const url = `${SUBSTACK_API}?sort=new&offset=0&limit=${limit}`;
     const res = await fetch(url, {
-      // Revalidate every hour. When a new post drops, the next visitor
-      // (after the revalidate window) will see it automatically at position 1.
-      next: { revalidate: 3600 },
+      headers: {
+        Accept: "application/json",
+      },
+      // Refresh often so new Substack drops do not wait on an old static build.
+      next: { revalidate: 300 },
     });
 
     if (!res.ok) throw new Error(`Substack API ${res.status}`);
@@ -45,9 +48,9 @@ export async function getLatestReads(limit = 10): Promise<Read[]> {
       return {
         title: (p.title || "").trim(),
         slug,
-        image: custom || p.cover_image || "",
+        image: custom || p.cover_image || DEFAULT_READ_IMAGE,
       };
-    });
+    }).filter((read) => read.title && read.slug);
   } catch (err) {
     console.warn("[reads] Falling back to static list:", err);
     return getStaticFallbackReads();
