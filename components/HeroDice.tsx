@@ -68,10 +68,10 @@ export default function HeroDice() {
         aria-label="Roll the dice — play the CHA$E video"
       >
         <Image
-          src="/uploads/CHASEBG.webp"
-          alt="CHA$E drop 001 artwork — a pair of blue dice"
-          width={1175}
-          height={1338}
+          src="/uploads/chase-dice.png"
+          alt="CHA$E dice artwork"
+          width={1536}
+          height={1024}
           priority
         />
         <span className="dice-card__play" aria-hidden="true">

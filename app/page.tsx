@@ -5,6 +5,7 @@ import HeroDice from "@/components/HeroDice";
 import Masthead from "@/components/Masthead";
 import Marquee from "@/components/Marquee";
 import DiscordBadge from "@/components/DiscordBadge";
+import Receipts from "@/components/Receipts";
 import Footer from "@/components/Footer";
 import { DISCORD_INVITE, HOME_MARQUEE } from "@/lib/site";
 import { getLatestReads } from "@/lib/reads";
@@ -114,6 +115,8 @@ export default async function Home() {
         </div>
       </section>
 
+      <Receipts />
+
       {/* ============ DIRECTORY ============ */}
       <section id="discord" className="directory" aria-label="The Server">
         <div className="directory-inner">
@@ -135,12 +138,25 @@ export default async function Home() {
 
           <a
             className="dir-row"
+            href="#receipts"
+          >
+            <span className="dir-row__meta">
+              <span className="dir-row__num">03</span>
+              <span className="dir-row__label">the proof</span>
+            </span>
+            <span className="dir-row__word dir-row__word--hollow">
+              RECEIPTS
+            </span>
+          </a>
+
+          <a
+            className="dir-row"
             href={DISCORD_INVITE}
             target="_blank"
             rel="noopener noreferrer"
           >
             <span className="dir-row__meta">
-              <span className="dir-row__num">03</span>
+              <span className="dir-row__num">04</span>
               <span className="dir-row__label">the server</span>
             </span>
             <span className="dir-row__word">DISCORD</span>
