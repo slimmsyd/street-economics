@@ -37,7 +37,7 @@ export default async function Home() {
               IN PUBLIC
             </h1>
             <p className="hero-caption">
-              A brand built in public, made with the people inside it.
+              A seat at the table for people who move instead of wait.
             </p>
             <Link className="hero-cta" href="/questionnaire">
               TAKE THE QUESTIONNAIRE <span aria-hidden="true">&rarr;</span>
@@ -50,7 +50,7 @@ export default async function Home() {
 
           <div className="hero-col hero-col--right">
             <p className="hero-caption hero-caption--narrow hero-caption--start">
-              We build drops worthy of obsession.
+              Most people are drifting. We build things.
             </p>
             <h2 className="display hero-headline hero-headline--right">
               COMMUNITY
@@ -58,7 +58,7 @@ export default async function Home() {
               FIRST
             </h2>
             <p className="hero-caption hero-caption--narrow hero-caption--end">
-              We turn a server full of strangers into a brand.
+              A server to build and ship your ideas in.
             </p>
           </div>
         </div>
