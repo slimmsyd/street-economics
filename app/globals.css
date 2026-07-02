@@ -834,11 +834,21 @@ img { display: block; }
   gap: 24px;
   overflow-x: auto;
   width: 100%;
+  min-width: 0;
   padding: 48px 8px 30px;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .receipts-row::-webkit-scrollbar { display: none; }
+
+.receipts-row--dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
 
 .receipt-card {
   flex: 0 0 clamp(340px, 42vw, 520px);
@@ -861,6 +871,8 @@ img { display: block; }
 .receipt-card__img {
   object-fit: contain;
   object-position: left top;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
 .receipt-card__context {
