@@ -400,10 +400,10 @@ img { display: block; }
 
 .dice-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   height: auto;
-  object-fit: cover;
-  object-position: center 58%;
+  object-fit: contain;
+  object-position: center;
   animation: se-float 7s ease-in-out infinite;
 }
 
@@ -794,6 +794,87 @@ img { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ============================================================
+   RECEIPTS ("Proof of SE")
+   ============================================================ */
+.receipts {
+  padding: 96px var(--gutter) 104px;
+}
+
+.receipts-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.receipts-eyebrow {
+  opacity: 0.7;
+}
+
+.receipts-title {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: clamp(56px, 9vw, 148px);
+  line-height: 0.9;
+}
+
+.receipts-sub {
+  margin: 14px 0 0;
+  font-size: clamp(18px, 1.6vw, 24px);
+  opacity: 0.85;
+  text-align: center;
+}
+
+.receipts-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  width: 100%;
+  padding: 48px 8px 30px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.receipts-row::-webkit-scrollbar { display: none; }
+
+.receipt-card {
+  flex: 0 0 clamp(340px, 42vw, 520px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.receipt-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  border: 1px solid var(--ink);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.receipt-card__img {
+  object-fit: contain;
+  object-position: left top;
+}
+
+.receipt-card__context {
+  align-self: flex-start;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 10px;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.receipts-cta {
+  margin-top: 26px;
 }
 
 /* ============================================================
